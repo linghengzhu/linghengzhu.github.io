@@ -1,467 +1,1066 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>MobileVideoRetrieve移动视频检索</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<script type="text/javascript">
-function Pages_jumpMenu(targ,selObj,restore){ 
-eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-if (restore) selObj.selectedIndex=0;
-}
-</script>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery-1.11.1.min.js"></script>
-
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/dashboard.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
-
-
-</head>
-
-<body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html"><h1><img src="images/logo.png" alt="" /></h1></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-<div class="header-top-right">
-		  <div class="file">
-					<a href="index.html">Home</a>
-				</div>	
-				<div class="signin"><a href="lists/1.html" class="play-icon">All&nbsp;videos</a><!-- pop-up-box -->
-									<script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
-									<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-									<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-
-									<div id="small-dialog8" class="mfp-hide">
-										<h3><p>Sorry.</p><p></p><p>This function will be available soon.</p></h3> 
-									</div>
-
-									<div id="small-dialog7" class="mfp-hide">
-										<h3>Quick Start</h3> 
-										<div class="feedback-grids">
-											<div class="feedback-grid">
-												<p>The real quick start version will be available soon.</p>
-											</div>
-											<div class="button-bottom">
-												<p>What about going to see<a href="guide.html" class="play-icon"> COMPLETE VERSION </a>first ?</p>
-											</div>
-										</div>
-									</div>
-
-									<div id="small-dialog4" class="mfp-hide">
-										<h3>Thank you</h3> 
-										<div class="feedback-grids">
-											<div class="feedback-grid">
-												<p>Thank you for helping us improve our product. Any kind of Comments and Suggestions is welcomed.</p>
-											</div>
-											<div class="button-bottom">
-												<p><a href="contact_us.html" class="play-icon">Contact us</a> and submit your feedback.</p>
-											</div>
-										</div>
-									</div>
-
-									<div id="small-dialog5" class="mfp-hide">
-										<h3>Help</h3> 
-											<div class="help-grid">
-												<p>What can we do for you?</p>
-											</div>
-											<div class="help-grids">
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog7" class="play-icon popup-with-zoom-anim">Quick start</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Feedback</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Join us</a></p>
-												</div>
-
-											</div>
-									</div>
-									<div id="small-dialog6" class="mfp-hide">
-										<div class="video-information-text">
-											<h3>Join us</h3>
-											<div class="button-bottom">
-												<p>Just<a href="contact_us.html" class="play-icon"> Contact us </a>and have a try.</p>
-											</div>
-										</div>
-									</div>
-									<script>
-											$(document).ready(function() {
-											$('.popup-with-zoom-anim').magnificPopup({
-												type: 'inline',
-												fixedContentPos: false,
-												fixedBgPos: true,
-												overflowY: 'auto',
-												closeBtnInside: true,
-												preloader: false,
-												midClick: true,
-												removalDelay: 300,
-												mainClass: 'my-mfp-zoom-in'
-											});
-
-											});
-									</script>	
-				</div>
-				<div class="signin">
-					<a href="guide.html" class="play-icon">Guide</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-        </div>
-		<div class="clearfix"> </div>
-      </div>
-    </nav>
-
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 main col-lg-offset-1 col-md-offset-1">
-			<div class="main-grids">
-				<div class="recommended">
-					<div class="recommended-grids english-grid">
-						<div class="recommended-info">
-							<div class="heading">
-								<h3>All Videos</h3>
-							</div>
-							<div class="heading-right">
-								<a  href="#small-dialog8" class="play-icon popup-with-zoom-anim">Subscribe</a>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/1.mp4"><img src="images/kf/1.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/1.html" class="title">004: Adblock</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/2.mp4"><img src="images/kf/2.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/2.html" class="title">02 - A Wallet, A Dollar, and the Existence of God 2 (Personal Theism)</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/3.mp4"><img src="images/kf/3.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/3.html" class="title">Amy washes windows at Fringe, excerpt 2</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/4.mp4"><img src="images/kf/4.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/4.html" class="title">Videographer Amy Sampson explains Disembody with her mouth</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/5.mp4"><img src="images/kf/5.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/5.html" class="title">1. manifestacion frente al hotel ritz por la privatizacion de la sanidad publica en Madrid. 23/09/20</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/6.mp4"><img src="images/kf/6.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/6.html" class="title">10 Cents</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-<div class="clearfix"></div>
-							</div>
-						</div>
-                        <div class="recommended">
-							<div class="recommended-grids">
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/7.mp4"><img src="images/kf/7.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/7.html" class="title">121308_MBB_HighlightsVsSMC</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/8.mp4"><img src="images/kf/8.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/8.html" class="title">125th Street Rezoning- NYC Council Public Hearing</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/9.mp4"><img src="images/kf/9.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/9.html" class="title">U.S. Thrilled As President Outlines Recovery Progress,  1933/10/23</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/10.mp4"><img src="images/kf/10.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/10.html" class="title">Roosevelt Landslide,  1936/11/07</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/11.mp4"><img src="images/kf/11.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/11.html" class="title"> Washington DC, 1940/05/13</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/12.mp4"><img src="images/kf/12.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/12.html" class="title">U. S. Raid Defenses Tested, 1941/04/24 </a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-<div class="clearfix"></div>
-							</div>
-						</div>
-                        <div class="recommended">
-							<div class="recommended-grids">
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/13.mp4"><img src="images/kf/13.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/13.html" class="title">Nazis War On Russia, 1941/06/23</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/14.mp4"><img src="images/kf/14.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/14.html" class="title">War News--All Good, 1944/05/22</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/15.mp4"><img src="images/kf/15.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/15.html" class="title">Winter Push To Knock Out German Reich,1944/12/14 </a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/16.mp4"><img src="images/kf/16.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/16.html" class="title">World Parley Gets Down To Business, 1945/04/30</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/17.mp4"><img src="images/kf/17.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/17.html" class="title">Postwar Flattop Launched, 1945/10/15</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/18.mp4"><img src="images/kf/18.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/18.html" class="title">Operations Crossroads Underway, 1946/07/01</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-<div class="clearfix"></div>
-							</div>
-						</div>
-                        <div class="recommended">
-							<div class="recommended-grids">
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/19.mp4"><img src="images/kf/19.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/19.html" class="title">Politics. Ike Stumps Midwest; Adlai's Son A Marine, 1952/09/22</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/20.mp4"><img src="images/kf/20.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/20.html" class="title">Politics. Ike Okays Nixon; Adlai In Baltimore, 1952/09/25</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/21.mp4"><img src="images/kf/21.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/21.html" class="title">Ike Returns. Sees Progress at Geneva Conference, 1955/07/25</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/22.mp4"><img src="images/kf/22.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/22.html" class="title">New York City, 1955/09/05</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/23.mp4"><img src="images/kf/23.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/23.html" class="title">Moscow Parley. P.O.W. issue Stalls Russo-German Talks, 1955/09/12</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-                        <div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
-							<div class="resent-grid-img recommended-grid-img">
-								<a href="http://buptmm-1252860282.costj.myqcloud.com/24.mp4"><img src="images/kf/24.jpg" alt="" /></a>
-							</div>
-							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single/24.html" class="title">Satellite A Bust. Rocket Blows Up In First U.S, 1957/12/09</a></h5>
-								<p class="author"><a href="#" class="author">Admin</a></p>
-							</div>
-						</div>
-<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-		<center>
-						<ul class="pagination">
-							<li>
-							  <a href="lists/1.html" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							  </a>
-							</li>
-
-							<li><a href="lists/1.html">First</a></li>
-
-							<li><a>To Page</a><a>
-									<form action="" method="get">
-    										<select name="jumpMenu" id="jumpMenu" onchange="Pages_jumpMenu('parent',this,0)" style="text-align: center;font-size: 1em;">
-        										<option value="#"> ----- </option>
-        										<option value="lists/1.html"> --1-- </option><option value="lists/2.html"> --2-- </option>
-        										<option value="lists/3.html"> --3-- </option><option value="lists/4.html"> --4-- </option>
-        										<option value="lists/5.html"> --5-- </option><option value="lists/6.html"> --6-- </option>
-        										<option value="lists/7.html"> --7-- </option><option value="lists/8.html"> --8-- </option>
-        										<option value="lists/9.html"> --9-- </option><option value="lists/10.html"> --10-- </option>
-        										<option value="lists/11.html"> --11-- </option><option value="lists/12.html"> --12-- </option>
-        										<option value="lists/13.html"> --13-- </option><option value="lists/14.html"> --14-- </option>
-        										<option value="lists/15.html"> --15-- </option><option value="lists/16.html"> --16-- </option>
-        										<option value="lists/17.html"> --17-- </option><option value="lists/18.html"> --18-- </option>
-        										<option value="lists/19.html"> --19-- </option><option value="lists/20.html"> --20-- </option>
-        										<option value="lists/21.html"> --21-- </option>
-    										</select>
-									</form>
-								</a>
-							</li>
-
-
-							<li><a href="lists/21.html">Last</a></li>
-							<li>							
-							  <a href="lists/2.html" aria-label="Next">	
-<span aria-hidden="true">&raquo;</span>
-</a>
-</li>
-</ul>
-</center>
-
-<div class="clearfix"> </div>
-<div class="drop-menu">
-    <!-- footer -->
-    <div class="footer">
-        <div class="footer-grids">
-
-            <div class="container-fluid bottom_line">
-                <div class="row-fluid">
-                    <div class="span8 col-lg-9 bottom_left">
-                        <div class="footer-top">
-                            <div class="footer-top-nav">
-                                <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="guide.html">Guide</a></li>
-                                    <li><a href="contact_us.html">Contact us</a></li>
-                                    <li><a href="copyright.html">Copyright</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4 col-lg-1 col-lg-offset-2">
-                        <div class="footer-bottom">
-                            <ul>
-                                <li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head>
 
 
 
-            <div class="footer-bottom-nav">	
-                <ul><li><a>Copyright &copy; 2017.MobileVideoRetrieve移动视频检索 All rights reserved.</a></li></ul>
-            </div>
 
 
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 14">
+<meta name="Originator" content="Microsoft Word 14">
+<link rel="File-List" href="index_files/filelist.xml">
+<link rel="Edit-Time-Data" href="index_files/editdata.mso"><!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>lgolab</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>lgolab</o:LastAuthor>
+  <o:Revision>41</o:Revision>
+  <o:TotalTime>106</o:TotalTime>
+  <o:Created>2011-09-20T00:55:00Z</o:Created>
+  <o:LastSaved>2013-03-08T05:59:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>915</o:Words>
+  <o:Characters>5218</o:Characters>
+  <o:Lines>43</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>6121</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<link rel="themeData" href="index_files/themedata.thmx">
+<link rel="colorSchemeMapping" href="index_files/colorschememapping.xml"><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-CA</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-fareast-language:EN-US;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></head><body lang="EN-CA" link="blue" vlink="purple">
+
+<div class="WordSection1">
+
+<table class="MsoTableGrid" style="border: medium none ; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 181.25pt;">
+  <td style="padding: 0cm 5.4pt; width: 217.2pt; height: 181.25pt;" valign="top" width="290">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style=""><!--[if gte vml 1]><v:shapetype
+   id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+   path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
+   style='width:168pt;height:195.75pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="index_files/image001.jpg" o:title=""/>
+  </v:shape><![endif]--><!--[if !vml]--><img src="index_files/image001.png" v:shapes="Picture_x0020_1" height="261" width="224"><!--[endif]--></span></p>
+  </td>
+  <td style="padding: 0cm 5.4pt; width: 390.65pt; height: 181.25pt;" valign="top" width="521">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 20pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Lukasz
+  <span class="SpellE">Golab</span><o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 20pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Associate Professor and Canada Research Chair<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="http://www.mansci.uwaterloo.ca/">Department of Management Sciences</a>,
+  <a href="http://www.engineering.uwaterloo.ca/">Faculty of Engineering</a>,<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Cross-appointed
+  to the <a href="http://www.cs.uwaterloo.ca/">School of Computer Science</a>, <a href="http://www.math.uwaterloo.ca/">Faculty of Mathematics</a>,<o:p></o:p></span></p>
+  
+  
+      <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Member
+  of the <a href="http://dsg.uwaterloo.ca">Data Systems Group</a>, <br>
+</span></p>
+      <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><a href="http://db.uwaterloo.ca/"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></a><a href="http://db.uwaterloo.ca/"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></a><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="text-decoration: underline;"></span></span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="https://wise.uwaterloo.ca/">Waterloo Institute for Sustainable
+  Energy</a>,</span></p>
+
+      
+
+  
+      <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="https://uwaterloo.ca/centre-automotive-research/">Waterloo Centre for Automotive Research</a>,</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"> <br>
+      </span></p>
+      <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">and
+  the <a href="http://blizzard.cs.uwaterloo.ca/iss4e/">Information Systems and
+  Science for Energy (ISS4E) Lab</a>,<o:p></o:p></span></p>
+
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="http://www.uwaterloo.ca/">University of Waterloo</a><o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Waterloo,
+  Ontario, Canada N2L 3G1<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Email:
+  <span class="SpellE">lgolab</span> at <span class="SpellE">uwaterloo</span> dot
+  ca<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Bio:</span></b><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+I joined Waterloo in 2011 and was awarded a
+Tier-2 Canada Research Chair in 2015. From 2006 to 2011 I was a
+Senior Member of Research Staff at AT&amp;T
+Labs. I have a BSc in Computer Science from the University of Toronto
+(2001; with High Distinction) and a PhD in Computer Science from
+the
+University of Waterloo (2006; with Alumni Gold Medal)<span class="GramE"></span>.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Research
+interests:</span></b><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+Big data; Fast data; Dirty data; Data analytics for a sustainable future; Educational data mining. </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">For more information, see my <a href="https://uwaterloo.ca/management-sciences/research/research-groups-and-labs/data-science-lab">Data Science Lab webpage</a>.</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">Current projects:</span>
+job scheduling and data placement in distributed systems; data stream analytics;
+integrated systems for real-time and historical analytics; discovering
+column dependencies and business rules from data; graph/social network analytics; analyzing smart
+electricity/water meter data; analyzing electric bicycle usage data
+(see <a href="http://blizzard.cs.uwaterloo.ca/iss4e/webike-project/">WeBike</a>); analyzing co-op employment data.&nbsp; <o:p></o:p></span></p>
+
+
+
+
+<b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></b>
+
+
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Current professional service: </span></b><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Associate
+Editor for Information Systems, Review Board Member for PVLDB
+2017/2018, PC member for SIGMOD 2018<br>
+</span></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Current teaching: </span></b><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Data Mining (undergrad), Big Data Analytics (grad).&nbsp; </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Course notes <a href="http://datascienceguide.github.io/">here</a> <br>
+</span></p>
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Media</span></b></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="https://theconversation.com/are-smart-meters-delivering-on-their-promise-79156">Are smart meters delivering on their promise?</a>, <a href="https://wise.uwaterloo.ca/news1/research-stories/research_spotlight_the_weather_wild_card_assessing_time_of_use_elect">The Weather Wild Card: Assessing Time-of-Use Electricity Pricing</a>, <a href="http://kitchener.ctvnews.ca/smart-meters-prompted-very-small-decrease-in-electricity-use-study-1.3437474#">CTV news</a><span style="font-style: italic;"></span><span style="font-weight: bold;"></span><br>
+</span></p>
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Tutorials</span></b></p>
+
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Z. Abedjan, L. Golab, F. Naumann, <span style="font-style: italic;">Data Profiling</span>, <span style="font-weight: bold;">SIGMOD</span> 2017, 1747-1751 and </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">ICDE</span> 2016, 1432-1435</span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">.&nbsp; <a href="https://hpi.de/fileadmin/user_upload/fachgebiete/naumann/publications/2017/SIGMOD_2017_Tutorial_Data_Profiling.pdf">Slides here</a><br>
+</span></p><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Golab, T. Johnson, <span style="font-style: italic;">Data Stream Warehousing</span>, <span style="font-weight: bold;">ICDE</span> 2014, 1290-1293 and </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">SIGMOD</span> 2013, 949-952</span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">.&nbsp; <a href="icde2014_tutorial.pdf">Slides here</a><br>
+<br>
+</span>
+
+
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+
+
+<p class="MsoNormal"><b style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Publications (</span></b><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><a href="http://www.informatik.uni-trier.de/%7Eley/db/indices/a-tree/g/Golab:Lukasz.html">or see DBLP</a><b>):<o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2017<br>
+</span></span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">NEW: X. Meng, L. Golab, <a href="bigdata17.pdf"><span style="font-style: italic;">Optimal Reducer Placement to Minimize Data Transfer in MapReduce-Style Processing</span></a>, <span style="font-weight: bold;">IEEE BigData</span> 2017, to appear<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">S. Baskaran, A. Keller, F. Chiang, L. Golab, J. Szlichta, <a href="fp0078-baskaranA.pdf"><span style="font-style: italic;">Efficient Discovery of Ontology Functional Dependencies</span></a>, <span style="font-weight: bold;">CIKM</span> 2017, 1847-1856<br>
+</span></p>
+
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">C. Gorenflo, I. Rios, L. Golab, S. Keshav, <a href="https://www.hindawi.com/journals/jat/2017/3739505/"><span style="font-style: italic;">Usage Patterns of Electric Bicycles: An Analysis of the WeBike Project</span></a>, <span style="font-weight: bold;">Journal of Advanced Transportation</span>, 2017, Article ID 3739505<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Yang, L. Golab, M. T. Ozsu, <span style="font-style: italic;">ViewDF: Declarative Incremental View Maintenance for Streaming Data</span>, <span style="font-weight: bold;">Information Systems</span>, 71 (2017) 55-67</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Toulis, L. Golab, <a href="social-media-mining.pdf"><span style="font-style: italic;">Social Media Mining to Understand Public Mental Health</span></a>, <span style="font-weight: bold;">DMAH</span> workshop at VLDB 2017, 55-70<br>
+</span></p>
+
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">K. El Gebaly, L. Golab, J. Lin, <a href="http://poloclub.gatech.edu/idea2017/papers/p35-elgabaly.pdf"><span style="font-style: italic;">Portable In-Browser Data Cube Exploration</span></a>, <span style="font-weight: bold;">IDEA</span> workshop at KDD 2017, 35-39</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">C. Gorenflo, </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Golab, S. Keshav, <a href="http://blizzard.cs.uwaterloo.ca/iss4e/wp-content/uploads/2017/05/managing-sensor-data.pdf"><span style="font-style: italic;">Managing Sensor Data Streams: Lessons Learned from the WeBike Project</span></a>, <span style="font-weight: bold;">SSDBM</span> 2017, 1:1-1:11</span></p>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">S. Fink, </span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Golab, S. Keshav, H. de Meer, <a href="http://blizzard.cs.uwaterloo.ca/iss4e/wp-content/uploads/2017/05/evsys17-final4.pdf"><span style="font-style: italic;">How Similar is the Usage of Electric Cars and Electric Bicycles?</span></a>, <span style="font-weight: bold;">EV-Sys</span> 2017, 334-340</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Toulis, L. Golab, <a href="toulis_nda17.pdf"><span style="font-style: italic;">Graph Mining to Characterize Competition for Employment</span></a>, <span style="font-weight: bold;">Network Data Analytics</span> workshop at SIGMOD 2017, 3:1-3:7<br>
+</span></p>
+
+
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">R. Miller, L. Golab, C. Rosenberg, <a href="https://ece.uwaterloo.ca/%7Ecath/miller2017.pdf"><span style="font-style: italic;">Modelling Weather Effects for Impact Analysis of Residential Time-of-Use Electricity Pricing</span></a>, <span style="font-weight: bold;">Energy Policy</span> 105 (2017) 534-546<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">J. Szlichta, P. Godfrey, L. Golab, M. Kargar, D. Srivastava, <a href="http://www.vldb.org/pvldb/vol10/p721-szlichta.pdf"><span style="font-style: italic;">Effective and Complete Discovery of Order Dependencies via Set-based Axiomatization</span></a>. <span style="font-weight: bold;">PVLDB</span> 10(7): 721-732, 2017</span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+</span>
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">G. Feng, L. Golab, D. Srivastava, <span style="font-style: italic;">Scalable Informative Rule Mining</span>, <span style="font-weight: bold;">ICDE</span> 2017, 48. Tech report <a style="font-style: italic;" href="http://web2.research.att.com/export/sites/att_labs/techdocs/TD_101943.pdf">here</a><br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">M. Zihayat, A. An, L. Golab, M. Kargar, J. Szlichta, <a href="http://openproceedings.org/2017/conf/edbt/paper-357.pdf"><span style="font-style: italic;">Authority-Based Team Discovery in Social Networks</span></a><span style="font-weight: bold;">, EDBT</span> 2017, 498-501<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">X. Liu, L. Golab, W. Golab, I. Ilyas, S. Jin, <span style="font-style: italic;">Smart Meter Data Analytics: Systems, Algorithms and Benchmarking</span>, <span style="font-weight: bold;">TODS</span> 42(1): 2:1-2:39, 2017</span>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><br>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2016<br>
+</span></span></p>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"> 
+</span>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">M. Kargar, L. Golab, J. Szlichta, <span style="font-style: italic;">eGraphSearch: Effective Keyword Search in Graphs</span>, <span style="font-weight: bold;">CIKM</span> 2016, 2461-2464, demo paper. Tech report <a href="http://arxiv.org/abs/1512.06395"><span style="font-style: italic;">here</span></a><br>
+</span></p>
+
+
+
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">I. Rios, L. Golab, S. Keshav, <a href="http://blizzard.cs.uwaterloo.ca/iss4e/wp-content/uploads/2016/06/trip.pdf"><span style="font-style: italic;">Analyzing the Usage Patterns of Electric Bicycles</span></a>, <span style="font-weight: bold;">EV-Sys</span> 2016, 2<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Baer, P. Casas, A. D�Alconzo, P. Fiadino, L. Golab, M. Mellia, E. Schikuta, <a href="http://www.sciencedirect.com/science/article/pii/S1389128616301189"><span style="font-style: italic;">DBStream: A Holistic Approach to Large-Scale Network Traffic Monitoring and Analysis</span></a>, <span style="font-weight: bold;">Computer Networks</span> 107 (2016) 5-19<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Gebhard, L. Golab, S. Keshav, H. de Meer, <a href="http://blizzard.cs.uwaterloo.ca/iss4e/wp-content/uploads/2016/06/range-prediction-electric.pdf"><span style="font-style: italic;">Range prediction for electric bicycles</span></a>, <span style="font-weight: bold;">e-Energy</span> 2016, 224-234<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Jiang, L. Golab, <a href="http://www.educationaldatamining.org/EDM2016/proceedings/paper_12.pdf"><span style="font-style: italic;">On Competition for Undergraduate Co-op Placements: A Graph Mining Approach</span></a>, <span style="font-weight: bold;">EDM</span> 2016, 394-399<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Jiang, R. Levman, L. Golab, J. Nathwani, <span style="font-style: italic;">Analyzing the Impact of the 5CP Ontario Peak Reduction Program on Large Consumers</span>, <span style="font-weight: bold;">Energy Policy</span> 93 (2016) 96-100<br>
+</span></p><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Jiang, S. J. Syed, L. Golab, <a href="http://www.mii.lt/informatics_in_education/pdf/infedu.2016.05.pdf"><span style="font-style: italic;">Data mining of undergraduate course evaluations</span></a>, <span style="font-weight: bold;">Informatics in Education</span> 15(1): 85-102<br>
+</span>
+
+<br>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2015<br>
+</span></span></p>
+
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Yang, L. Golab, M. T. Ozsu, <span style="font-style: italic;">ViewDF: declarative incremental view maintenance for streaming data</span>, VLDB Workshop on Business Intelligence for the Real Time Enterprise (<span style="font-weight: bold;">BIRTE</span>) 2015.&nbsp; Early version <a style="font-style: italic;" href="http://db.cs.pitt.edu/birte2015/files/paper5.pdf">here</a><br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">C. Ge, M. Kaufmann, L. Golab, P. M. Fischer, A. Goel, <span style="font-style: italic;">Indexing bi-temporal windows</span>, <span style="font-weight: bold;">SSDBM</span> 2015, 19<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Z. Abedjan, L. Golab, F. Naumann, <span style="font-style: italic;">Profiling relational data - a survey</span>, <span style="font-weight: bold;">VLDB Journal</span> 24(4): 557-581<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">J. Szlichta, L. Golab, D. Srivastava, <a href="http://ceur-ws.org/Vol-1378/AMW_2015_paper_15.pdf"><span style="font-style: italic;">On Axiomatization and Inference Complexity over a Hierarchy of Functional Dependencies</span></a>, <span style="font-weight: bold;">AMW </span>2015<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Jiang, S. Lee, L. Golab, <a href="http://www.apjce.org/files/APJCE_16_4_225_240.pdf"><span style="font-style: italic;">Analyzing student and employer satisfaction with cooperative education through multiple data sources</span></a>, <span style="font-weight: bold;">Asia-Pacific Journal of Cooperative Education</span>, 16(4):225-240, 2015<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">X. Gao, L. Golab, S. Keshav, <a href="http://ceur-ws.org/Vol-1330/paper-15.pdf"><span style="font-style: italic;">What's wrong with my solar panels: a data-driven approach</span></a>, <span style="font-weight: bold;">EnDM</span> 2015, 86-93<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">X. Liu, L. Golab, W. Golab, I. Ilyas, <a href="http://openproceedings.org/2015/conf/edbt/paper-55.pdf"><span style="font-style: italic;">Benchmarking Smart Meter Data Analytics</span></a>, <span style="font-weight: bold;">EDBT</span> 2015, 385-396<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Baer, L. Golab, S. Ruehrup, M. Schiavone, P. Casas, <a href="ICDE15_research_130.pdf"><span style="font-style: italic;">Cache-Oblivious Scheduling of Shared Workloads</span></a>, <span style="font-weight: bold;">ICDE</span> 2015, 855-866<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Golab, F. Korn, F. Li, B. Saha, D. Srivastava, <span style="font-style: italic;">Size-Constrained Weighted Set Cover</span>, <span style="font-weight: bold;">ICDE</span> 2015, 879-890<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">X. Liu, L. Golab, I. Ilyas, <span style="font-style: italic;">SMAS: A Smart Meter Data Analytics System</span>, <span style="font-weight: bold;">ICDE</span> 2015, 1476-1479, demo paper<br>
+</span></p>
+
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2014</span><br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Baer, A. Finamore, P. Casas, L. Golab, M. Mellia, <a href="http://www.telematica.polito.it/users/mellia/papers/BigData14.pdf"><span style="font-style: italic;">Large-Scale Network Traffic Monitoring with DBStream, a System for Rolling Big Data Analysis</span></a>, <span style="font-weight: bold;">IEEE BigData</span> 2014, 165-170<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">K. El Gebaly, P. Agrawal, L. Golab, F. Korn, D. Srivastava, <a href="http://www.vldb.org/pvldb/vol8/p61-elgebaly.pdf"><span style="font-style: italic;">Interpretable and Informative Explanations of Outcomes</span></a>, <span style="font-weight: bold;">PVLDB</span> 8(1):61-72, 2014<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. Golab, M. Hadjieleftheriou, H. Karloff, B. Saha, <span style="font-style: italic;">Distributed Data Placement to Minimize Communication Costs via Graph Partitioning, </span><span style="font-weight: bold;">SSDBM</span> 2014, 20-31.&nbsp; Tech report here: <a href="http://arxiv.org/abs/1312.0285"><span style="font-weight: bold;">CoRR</span> abs/1312.0285</a><br>
+</span></p>
+
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A. Baer, P. Casas, L. Golab, A. Finamore, <span style="font-style: italic;">DBStream: an Online Aggregation, Filtering and Processing System for Network Traffic Monitoring</span>, 5th Int. Workshop on Traffic Analysis and Characterization (<span style="font-weight: bold;">TRAC</span>) 2014, 611-616<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">S. J. Syed, Y. Jiang, L. Golab, <a href="http://educationaldatamining.org/EDM2014/uploads/procs2014/posters/23_EDM-2014-Poster.pdf"><span style="font-style: italic;">Data Mining of Undergraduate Course Evaluations</span></a>, <span style="font-weight: bold;">EDM</span> 2014, 347-348<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">T. Carpenter, L. Golab, S. J. Syed, <a href="http://www.tommyjcarpenter.com/papers/2014/eenergy_sentiment.pdf"><span style="font-style: italic;">Is the grass greener? Mining electric vehicle opinions</span></a>, <span style="font-weight: bold;">e-Energy</span> 2014, 241-252<br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Y. Jiang R. Levman, L. Golab, J. Nathwani, <span style="font-style: italic;">Predicting peak-demand days in the Ontario peak reduction program for large consumers</span>, <span style="font-weight: bold;">e-Energy</span> 2014, 221-222<br>
+</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">O. Ardakanian, N. Koochakzadeh, R. P. Singh, L. Golab, S. Keshav, <span style="font-style: italic;">Computing Electricity Consumption Profiles from Household Smart Meter Data</span>, <span style="font-weight: bold;">EnDM</span> 2014, 140-147</span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L.
+<span class="SpellE">Golab</span>, H. Karloff, F. <span class="SpellE">Korn</span>,
+B. <span class="SpellE">Saha</span>, D. <span class="SpellE">Srivastava</span>, <i>Discovering
+Conservation Rules</i>, <b>TKDE</b>, 26(6):1332-1348, 2014<br>
+</span></p>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span class="SpellE"></span></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">G. Beskales, I. Ilyas, L. Golab, A. Galuillin, <span style="font-style: italic;">Sampling from Repairs of Conditional Functional Dependency Violations</span>, <span style="font-weight: bold;">VLDB Journal</span>, 23(1):103-128, 201</span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">4<span class="SpellE"></span><span class="SpellE"></span><span class="SpellE"></span><br>
+<br>
+</span><p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2013</span><br>
+</span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">C. Ge, L. Golab, <span style="font-style: italic;">Lazy data structure maintenance for main-memory analytics over sliding windows</span>, <span style="font-weight: bold;">DOLAP</span> 2013, 33-38<br>
+</span></p><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">M.
+Deziel, D. Olawo, L. Truchon, L. Golab, <span style="font-style: italic;">Analyzing the mental health of
+Engineering students using classification and regression</span>, <span style="font-weight: bold;">EDM</span> 2013, 228-231</span><br>
+<p class="MsoNormal" style="">
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span>
+</p>
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">G.
+<span class="SpellE">Beskales</span>, I. <span class="SpellE">Ilyas</span>, L. <span class="SpellE">Golab</span>, A. <span class="SpellE">Galiullin</span>, <i>On the
+Relative Trust between Inconsistent Data and Inaccurate Constraints</i>, <b>ICDE</b>
+2013, 541-552<o:p></o:p></span></p>
+
+
+
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L.
+<span class="SpellE">Golab</span>, <i>Data Warehouse Quality: Summary and Outlook</i>, in S. Sadiq (ed.), Handbook of Data Quality � Research and Practice, Springer-Verlag Berlin Heidelberg 2013</span></p>
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2012</span></span><br>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">A.
+Baer, L. <span class="SpellE">Golab</span>, <i>Towards Benchmarking Stream Data
+Warehouses</i>, <b>DOLAP</b> 2012, 105-112</span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span class="SpellE"></span><span class="SpellE"></span><span class="SpellE"></span><span class="SpellE"></span><o:p></o:p></span></p>
+
+
+
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. <span class="SpellE">Golab</span>,
+T. Johnson, S. Sen, J. Yates<span class="SpellE"></span></span><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">, <a href="http://pam2012.ftw.at/papers/PAM2012paper11.pdf"><span class="GramE"><i style="">A</i></span><i style=""> Sequence-Oriented
+Stream Warehouse Paradigm for Network Monitoring Applications</i></a>,<span style="font-weight: bold;"> </span><b>PAM </b>2012, 53-63</span></p>
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. <span class="SpellE">Golab</span>, H. Karloff, F. <span class="SpellE">Korn</span>, B. <span class="SpellE">Saha</span>, D. <span class="SpellE">Srivastava</span>, <i style="">Discovering
+Conservation Rules</i>, <b style="">ICDE</b> 2012,
+738-749<o:p></o:p></span>
+
+
+
+</p>
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">L. <span class="SpellE">Golab</span>,
+T. Johnson, V. <span class="SpellE">Shkapenyuk</span>, <i style="">Scalable Scheduling of Updates in Streaming Data Warehouses</i>, <b style="">TKDE</b>, 24(6): 1092-1105, 2012</span></p>
+
+
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2011</span></span><br>
+<span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style=""><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">M. <span class="SpellE">Bateni</span>,
+L. <span class="SpellE">Golab</span>, M. <span class="SpellE">Hajiaghayi</span>, H.
+Karloff, <i>Scheduling to Minimize Staleness and Stretch in Real-Time Data
+Warehouses</i><span style="">, <b style="">Theory of Computing Systems</b>, 49(4):757-780, 2011</span><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, F. <span class="SpellE">Korn</span>, D. <span class="SpellE">Srivastava</span>, <i style="">Efficient and Effective Analysis of Data
+Quality using Pattern Tableaux</i>, <b style="">IEEE
+Data Engineering Bulletin</b>, 34(3):26-33, 2011<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, F. <span class="SpellE">Korn</span>, D. <span class="SpellE">Srivastava</span>, <i style="">Discovering Pattern Tableaux for Data
+Quality Analysis: a Case Study</i>, <b style="">QDB</b>
+2011, 47-53, 2011<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+T. Johnson, <i style="">Consistency in a Stream
+Warehouse</i>, <b style="">CIDR</b> 2011, 114-122</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2010</span></span><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style="margin-left: 72pt; text-align: justify; text-indent: -72pt; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, M. T. <span class="SpellE">Ozsu</span>, <i style="">Data Stream
+Management</i>, Morgan &amp; Claypool Publishers, 2010<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">G. <span class="SpellE">Beskales</span>,
+I. <span class="SpellE">Ilyas</span>, L. <span class="SpellE">Golab</span>, <i style="">Sampling the Repairs of Functional
+Dependency Violations under Hard Constraints</i>, <b style="">PVLDB</b> 3(1):197-207, 2010<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+H. Karloff, F. <span class="SpellE">Korn</span>, D. <span class="SpellE">Srivastava</span>,
+<i style="">Data Auditor: Exploring Data Quality and
+Semantics using Pattern Tableaux</i>, <b style="">PVLDB</b>
+3(2):1641-1644, 2010, demo paper</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">D. Srivastava, L. Golab, R. Greer, T. Johnson, J. Seidel, V. Shkapenyuk, O. Spatscheck, J. Yates, <span style="font-style: italic;">Enabling Real Time Data Analysis</span>, <span style="font-weight: bold;">PVLDB</span> 3(1): 1-2, 2010<br>
+</span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2009</span></span><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &ququot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+H. Karloff, F. <span class="SpellE">Korn</span>, A. <span class="SpellE">Saha</span>,
+D. <span class="SpellE">Srivastava</span>, <i style="">Sequential
+Dependencies</i>, <b style="">PVLDB</b>
+2(1):574-585, 2009<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, T. Johnson, J. S. Seidel, V. <span class="SpellE">Shkapenyuk</span>,
+<i>Stream Warehousing with <span class="SpellE">DataDepot</span></i>, <b style="">SIGMOD</b> 2009, 847-854<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">G. <span class="SpellE">Cormode</span>, L. <span class="SpellE">Golab</span>, F. <span class="SpellE">Korn</span>, A. McGregor, D. <span class="SpellE">Srivastava</span>,
+X. Zhang, <i>Estimating the Confidence of Conditional Functional Dependencies</i>,
+<b style="">SIGMOD</b> 2009, 469-482<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, T. Johnson, V. <span class="SpellE">Shkapenyuk</span>,
+<i>Scheduling Updates in a Real-Time Stream Warehouse</i>, <b style="">ICDE</b> 2009, 1207-1210</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; font-variant: small-caps;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">M. <span class="SpellE">Bateni</span>,
+L. <span class="SpellE">Golab</span>, M. <span class="SpellE">Hajiaghayi</span>, H.
+Karloff, <i>Scheduling to Minimize Staleness and Stretch in Real-Time Data
+Warehouses</i><span style="">, <b style="">SPAA</b> 2009, 29-38<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="text-align: justify; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, <i>Stream Models</i>, Encyclopedia
+of Database Systems, 2009, 2834-2836<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="text-align: justify; line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, <i>Data Stream</i>, Encyclopedia of
+Database Systems, 2009, 638</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal;"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2008</span></span><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+H. Karloff, F. <span class="SpellE">Korn</span>, D. <span class="SpellE">Srivastava</span>,
+B. Yu<span style="font-variant: small-caps;">, </span><i style="">On Generating Near-Optimal Tableaux for Conditional Functional
+Dependencies</i>, <b style="">PVLDB</b>
+1(1):376-390, 2008<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+T. Johnson, O. <span class="SpellE">Spatscheck</span><span style="font-variant: small-caps;">, </span><span class="SpellE"><i style="">Prefilter</i></span><i style="">: Predicate Pushdown at Streaming Speeds</i>,
+<b style="">SSPS</b> 2008, 29-37<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+T. Johnson, N. <span class="SpellE">Koudas</span>, D. <span class="SpellE">Srivastava</span>,
+D. <span class="SpellE">Toman</span><span style="font-variant: small-caps;">, </span><i style="">Optimizing Away Joins on Data Streams</i>, <b style="">SSPS</b> 2008, 48-57</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"><span style="font-weight: bold;">2006</span></span><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><o:p></o:p></span></p>
+
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+K. G. <span class="SpellE">Bijay</span>, M. T. <span class="SpellE">Ozsu</span><span style="font-variant: small-caps;">, </span><i style="">Multi-Query
+Optimization of Sliding Window Aggregates by Schedule Synchronization</i>, <b style="">CIKM</b> 2006, 844-845<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+P. <span class="SpellE">Prahladka</span>, M. T. <span class="SpellE">Ozsu</span><span style="font-variant: small-caps; color: black;">, </span><i><span style="color: black;">Indexing Time-Evolving Data with Variable Lifetimes</span></i><span style="color: black;">, </span><b style="">SSDBM</b> 2006, 265-274<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+K. G. <span class="SpellE">Bijay</span>, M. T. <span class="SpellE">Ozsu</span><span style="font-variant: small-caps;">, </span><i style="">On
+Concurrency Control in Sliding Window Queries over Data Streams</i><span style="">, </span><b style="">EDBT</b> 2006, 608-626</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><span style="font-weight: bold;">2005</span><br>
+</span></p>
+
+
+
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+M. T. <span class="SpellE">Ozsu</span><span style="font-variant: small-caps;">, </span><i>Update-Pattern-Aware
+Modeling and Processing of Continuous Queries</i><span style="">, <b style="">SIGMOD</b> 2005, 658-669</span></span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><span style=""><span style="font-weight: bold;">2004</span><br>
+</span></span></p>
+
+
+
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+S. <span class="SpellE">Garg</span>, M. T. <span class="SpellE">Ozsu</span>, <i>On Indexing
+Sliding Windows over On-Line Data Streams</i><span style="">, </span><b style="">EDBT</b> 2004, 712-729<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+D. <span class="SpellE">DeHaan</span>, A. Lopez-Ortiz, E. <span class="SpellE">Demaine</span>,
+<i>Finding Frequent Items in Sliding Windows with <span class="SpellE">Multinomially</span>-Distributed
+Item Frequencies</i>, <b style="">SSDBM</b> 2004,
+425-426</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>, <span class="SpellE"></span><i>Querying Sliding Windows Over Online Data Streams</i><span style="">,</span> <span style="font-weight: bold;">EDBT Ph.D. Workshop</span> 2004, 1-11</span></p>
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"><span style="font-weight: bold;">2003</span><br>
+</span></p>
+
+
+
+
+
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US"></span>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+D. <span class="SpellE">DeHaan</span>, E. <span class="SpellE">Demaine</span>, A.
+Lopez-Ortiz, J. I. Munro, <i>Identifying Frequent Items in Sliding Windows over
+On-Line Packet Streams</i>, <b style="">IMC</b>
+2003, 173-178<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+M. T. <span class="SpellE">Ozsu</span>, <i>Processing Sliding Window Multi-Joins
+in Continuous Queries over Data Streams</i><span style="">,</span> <b style="">VLDB</b> 2003, 500-511<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: normal;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;" lang="EN-US">L. <span class="SpellE">Golab</span>,
+M. T. <span class="SpellE">Ozsu</span>, <i>Issues in Data Stream Management</i>, <b style="">SIGMOD Record</b>, 32(2):5-14, 2003<o:p></o:p></span></p>
+
 </div>
 
-
-<script src="js/bootstrap.min.js"></script>
-
-</body>
-</html>
+</body></html>
