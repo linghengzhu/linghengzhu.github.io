@@ -1,0 +1,26 @@
+# jemdoc: menu{MENU}{index.html}, nofooter  
+==Lingheng Zhu 
+
+~~~
+{}{img_left}{index_files/image001.png}{alt text}{131}{160}{http://people.kth.se/~euhanna/}
+Undergraduate student,\n 
+[http://is.bupt.edu.cn/ International School] \n
+[http://www.bupt.edu.cn/ Beijing University of Posts and Telecommunications(BUPT)] \n
+No.10, Xitucheng Road, Haidian District, Beijing, 100876, China \n
+Phone: \+86 18811579199 \n
+Email: /zhulingheng0712@bupt.edu.cn/
+~~~
+
+== About me
+I am now a senior student in Beijing University of Posts and Telecommunications ([http://www.bupt.edu.cn/ BUPT]). From 2016.7 to 2017.5, I was an intern in Laboratory of Intelligent Telecommunications Software and Multimedia in BUPT School of Computer Science. Now I work part-time as an intern dev in VMware Information Technology (China). \n
+You can find more here. [linghengzhu.pdf A brief cv]. [linghengzhu.pdf Transcript].
+
+== Research
+My research interests include 
+- Data Mining
+- Information Retrieval
+- Database System
+
+=== Publications 
+. Lingheng Zhu, Wu Liu, Lingyang Chu, Peiye Liu, Xiaoyan Gu. "Query from Sketch: A Common Subgraph Correspondence Mining Framework", Proceedings - 2017 IEEE 3rd International Conference on Multimedia Big Data, BigMM 2017, 413-418
+. *(under review)* Wu Liu, Lingheng Zhu, Lingyang Chu, Huadong Ma. "A Common Subgraph Correspondence Mining Framework for Map Searching Services", Multimedia Tools and Applications
